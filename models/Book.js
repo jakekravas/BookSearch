@@ -3,24 +3,29 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const BookSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
+  },
   title: {
     type: String,
     required: true
   },
-  authors: [
-    {
-      name:  {
-        type: String
-      }
-    }
-  ],
+  // authors: [
+  //   {
+  //     name:  {
+  //       type: String
+  //     }
+  //   }
+  // ],
+  authors: {
+    type: String
+  },
   description: {
-    type: String,
-    required: true
+    type: String
   },
   image: {
-    type: String,
-    required: true
+    type: String
   },
   link: {
     type: String,
