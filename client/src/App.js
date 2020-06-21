@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/pages/Navbar";
+import './bootstrap.css';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      a
-    </div>
+    <Router>
+      <Fragment>
+        <Navbar/>
+      </Fragment>
+    </Router>
   );
 }
 
