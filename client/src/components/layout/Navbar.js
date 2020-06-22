@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-light bg-light">
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand" href="#"><i className="fas fa-book-reader"/> BookSearch</a>
           <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
