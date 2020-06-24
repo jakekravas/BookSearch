@@ -53,3 +53,43 @@ body {
 .form-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);;
 }
+
+#sicc {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-inp-cont {
+  width: 30%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 35px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+#search-btn{
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background-color: transparent;
+}
+
+#search-icon{
+  background-color: #de2454;
+  color: #fff;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+#landing-search {
+  border: none;
+}
+
+#landing-search:focus {
+  outline: none;
+}
