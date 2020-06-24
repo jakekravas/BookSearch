@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from "react-redux";
+import { login } from "../../actions/auth";
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+  
+  const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+
+  const onSubmit = () => {
+    login(formData.email, formData.password);
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/"/>
+  }
+
   return (
     <div className="col-4 mx-auto mt-5">
       <div className="card">
@@ -9,16 +27,36 @@ const Login = () => {
             Login to your account
           </h4>
           <div className="form-group pt-3">
-            <input type="text" className="form-control auth-inp" placeholder="Username"/>
+            <input
+              onChange={onChange}
+              type="text"
+              name="email"
+              className="form-control auth-inp"
+              placeholder="Email"
+            />
           </div>
           <div className="form-group">
-            <input type="password" className="form-control auth-inp" placeholder="Password"/>
+            <input
+              onChange={onChange}
+              type="password"
+              name="password"
+              className="form-control auth-inp"
+              placeholder="Password"
+            />
           </div>
         </div>
-        <button className="auth-btn py-3">Login</button>
+        <button className="auth-btn py-3" onClick={onSubmit}>
+          <Link to="/">
+            Login
+          </Link>
+        </button>
       </div>
     </div>
   )
 }
 
-export default Login
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { login })(Login);
