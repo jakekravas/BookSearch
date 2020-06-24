@@ -72,24 +72,40 @@ body {
   padding-right: 10px;
 }
 
-#search-btn{
+#search-inp-cont-nav {
+  /* width: 30%; */
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 35px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.search-btn{
   border: none;
   border-radius: 50%;
   padding: 0;
   background-color: transparent;
 }
 
-#search-icon{
+.search-icon{
   background-color: #de2454;
   color: #fff;
   border-radius: 50%;
   padding: 12px;
 }
 
-#landing-search {
+.search-icon-nav{
+  padding: 9px;
+}
+
+.search-inp {
   border: none;
 }
 
-#landing-search:focus {
+.search-inp:focus {
   outline: none;
 }

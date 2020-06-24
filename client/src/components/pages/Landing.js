@@ -7,9 +7,9 @@ const Landing = () => {
       <h1 className="landing-header text-center">Millions of books <br/> at your fingertips</h1>
       <div id="sicc" className="text-center">
         <form id="search-inp-cont">
-          <input id="landing-search" type="text" placeholder="Search"/>
-          <button type="submit" id="search-btn">
-            <i class="fas fa-search" id="search-icon"/>
+          <input className="search-inp" type="text" placeholder="Search"/>
+          <button type="submit" className="search-btn">
+            <i class="fas fa-search search-icon"/>
           </button>
         </form>
       </div>

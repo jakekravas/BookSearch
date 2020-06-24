@@ -35,10 +35,20 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <form className="form-inline mx-auto">
+            {/* hide form when on home page */}
+            <form className="form-inline mx-auto" id="search-inp-cont-nav">
+              <input type="text" className="search-inp" placeholder="Search"/>
+              <button className="btn">
+                <i class="fas fa-search"/>
+              </button>
+              {/* <button className="btn btn-outline-secondary search-btn">
+                <i class="fas fa-search search-icon search-icon-nav"/>
+              </button> */}
+            </form>
+            {/* <form className="form-inline mx-auto">
               <input type="text" className="form-control mr-2" placeholder="Search"/>
               <button className="btn btn-outline-secondary">Search</button>
-            </form>
+            </form> */}
             {!loading && (
               <Fragment>
                 { isAuthenticated ? authLinks : guestLinks }
