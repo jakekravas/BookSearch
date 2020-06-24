@@ -46,9 +46,7 @@ const Login = ({ login, isAuthenticated }) => {
           </div>
         </div>
         <button className="auth-btn py-3" onClick={onSubmit}>
-          <Link to="/">
-            Login
-          </Link>
+          Login
         </button>
       </div>
     </div>

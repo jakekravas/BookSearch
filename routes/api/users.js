@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
-const expressValidator = require("express-validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const config = require("config");
@@ -13,7 +12,7 @@ const User = require('../../models/User');
 // @access     Private
 router.post("/", [
   check("email", "Please include a valid email").isEmail(),
-  check("password", "Please enter a password with six or more characters").isLength({ min: 6 })
+  check("password", "Please include a password of at least six characters").isLength({ min: 6 })
 ], async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()){
