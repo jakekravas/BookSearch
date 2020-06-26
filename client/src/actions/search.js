@@ -7,8 +7,7 @@ import {
 
 export const getSearch = (userSearch, history) => async dispatch => {
   try {
-    //{userSearch}&maxResults=30`);
-    const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${userSearch}`);
+    const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${userSearch}&maxResults=40`);
     console.log(res.data.items);
     dispatch({
       type: GET_SEARCH_RESULTS,

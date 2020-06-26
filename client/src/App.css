@@ -143,6 +143,23 @@ body {
   width: 100%;
 }
 
+.res-title {
+  margin: 10px 0 0 0;
+}
+
 .res-btn {
   margin-top: auto;
+  background-color: #de2454;
+  color: #f6f6f6;
+  border: none;
+  border-radius: 30px;
+  padding: 7px 0 7px 0;
+}
+
+.res-btn:hover {
+  background-color: #b41b43;
+}
+
+.res-btn:focus {
+  outline: none;
 }
