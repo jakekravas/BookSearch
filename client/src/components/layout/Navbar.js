@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, Fragment } from 'react';
+import { withRouter } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../actions/auth";
+import { getSearch } from "../../actions/search";
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout, getSearch, history }) => {
   const guestLinks = (
     <ul className="navbar-nav">
       <li className="nav-item">
@@ -26,6 +28,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </ul>
   )
 
+  const [search, setSearch] = useState("");
+
+  const onChange = e => setSearch(e.target.value);
+
+  const onSubmit = e => {
+    e.preventDefault();
+    getSearch(search, history);
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -36,8 +47,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             {/* hide form when on home page */}
-            <form className="form-inline mx-auto" id="search-inp-cont-nav">
-              <input type="text" className="search-inp" placeholder="Search"/>
+            <form onSubmit={onSubmit} className="form-inline mx-auto" id="search-inp-cont-nav">
+              <input
+                type="text"
+                name="search"
+                onChange={onChange}
+                value={search}
+                className="search-inp"
+                placeholder="Search"
+              />
               <button className="btn">
                 <i class="fas fa-search"/>
               </button>
@@ -65,4 +83,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logout })(Navbar)
+export default connect(mapStateToProps, { logout, getSearch })(withRouter(Navbar))

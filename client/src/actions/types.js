@@ -6,3 +6,6 @@ export const USER_LOADED = "USER_LOADED";
 export const AUTH_ERROR = "AUTH_ERROR";
 export const LOGOUT = "LOGOUT";
 export const CLEAR_PROFILE = "CLEAR_PROFILE";
+export const GET_SEARCH_RESULTS = "GET_SEARCH_RESULTS";
+export const GET_SEARCH_WORD = "GET_SEARCH_WORD";
+export const SEARCH_ERROR = "SEARCH_ERROR";

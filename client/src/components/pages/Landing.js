@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const Landing = () => {
+  const onSubmit = () => {
+
+  }
+  
   return (
     <section id="landing-img">
     <div className="container">
@@ -8,9 +13,11 @@ const Landing = () => {
       <div id="sicc" className="text-center">
         <form id="search-inp-cont">
           <input className="search-inp" type="text" placeholder="Search"/>
-          <button type="submit" className="search-btn">
-            <i class="fas fa-search search-icon"/>
-          </button>
+          <Link to="/searchresult">
+            <button onSubmit={onSubmit} type="submit" className="search-btn">
+              <i class="fas fa-search search-icon"/>
+            </button>
+          </Link>
         </form>
       </div>
       {/* <div className="row">

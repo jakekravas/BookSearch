@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/pages/Landing";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
+import SearchResults from "./components/pages/SearchResults";
 import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/" component={Landing}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup}/>
+            <Route exact path="/searchresults" component={SearchResults}/>
           </Switch>
         </Fragment>
       </Router>
